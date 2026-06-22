@@ -31,6 +31,16 @@
 
   <title>mrbarril_pedidos</title>
   <link rel="manifest" href="manifest.json">
+
+  <!--
+    Requerido por una dependencia transitiva de supabase_flutter
+    (soporte de login con passkeys) para poder compilar/correr en web.
+    No usamos passkeys en esta app (el login es con email/password),
+    pero el plugin igual exige este script presente o el motor de
+    Flutter Web truena al iniciar con:
+    "Error: Passkeys Web SDK not loaded."
+  -->
+  <script src="https://github.com/corbado/flutter-passkeys/releases/download/2.4.0/bundle.js"></script>
 </head>
 <body>
   <!--
